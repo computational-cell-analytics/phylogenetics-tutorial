@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 
 OUT_DIST = Path("primate_mt_cytb_pdist.csv")
 OUT_TREE = Path("primate_mt_cytb_upgma.png")
-OUT_FASTA = Path("primate_mt_cytb.fasta")
+DEFAULT_FASTA = Path("../data/primate_mt_cytb.fasta")
 
 
 def p_distance(seq1, seq2):
@@ -78,14 +78,20 @@ def plot_upgma(distance_df, out_path):
     plt.ylabel("p-distance")
     plt.title("Primate mitochondrial CYTB: UPGMA / average-linkage tree")
     plt.tight_layout()
-    plt.savefig(out_path, dpi=200)
+    plt.show()
+    # plt.savefig(out_path, dpi=200)
     plt.close()
 
     print(f"Wrote tree plot to {out_path}")
 
 
 def main():
-    records = list(SeqIO.parse(OUT_FASTA, "fasta"))
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-i", "--input_path", default=DEFAULT_FASTA)
+    args = parser.parse_args()
+
+    records = list(SeqIO.parse(args.input_path, "fasta"))
     distance_df = compute_distance_matrix(records)
 
     print("\nPairwise p-distance matrix:")
