@@ -73,14 +73,15 @@ def plot_upgma(distance_df, out_path):
     condensed = squareform(distance_df.values)
     Z = linkage(condensed, method="average")
 
-    plt.figure(figsize=(7, 4))
-    dendrogram(Z, labels=list(distance_df.index))
-    plt.ylabel("p-distance")
-    plt.title("Primate mitochondrial CYTB: UPGMA / average-linkage tree")
+    fig, ax = plt.subplots()
+    dendrogram(Z, labels=list(distance_df.index), orientation="bottom", link_color_func=lambda k: "black", ax=ax)
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+    plt.ylabel("Distance")
     plt.tight_layout()
     plt.show()
     # plt.savefig(out_path, dpi=200)
-    plt.close()
+    # plt.close()
 
     print(f"Wrote tree plot to {out_path}")
 
