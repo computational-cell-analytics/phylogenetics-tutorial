@@ -16,7 +16,7 @@ You can find more information on the topics covered in this tutorial and advance
 - [Introduction to phylogenetics](https://evolution.berkeley.edu/evolution-101/): a good and accessible overview.
 - [UPGMA](https://usuaris.tinet.cat/debb/UPGMA/DendroUPGMA_Tut.pdf): A more in-depth tutorial.
 - [Evolutionary correction](https://www.hiv.lanl.gov/content/sequence/TUTORIALS/TREE_TUTORIAL/Tree-tutorial.html): A tutorial that includes the discussion of corrections to model multiple substitutions at a given site.
-- [Neighborhood joining](https://academic.oup.com/mbe/article/23/11/1997/1322446): Neighborhood joining approaches for building phylogenetic trees that remove the assumption of a constant mutation rate.
+- [Neighbor joining](https://academic.oup.com/mbe/article/23/11/1997/1322446): Neighbor joining approaches for building phylogenetic trees that remove the assumption of a constant mutation rate.
 - [Bayesian approaches](https://pmc.ncbi.nlm.nih.gov/articles/PMC5624502/): Bayesian approaches for building the trees that provide likelihood estimates.
 
 Textbooks on the topic:
